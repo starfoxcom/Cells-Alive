@@ -3,10 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class inputManagerP1 : MonoBehaviour
+public class inputManagerP1 : InputManager
 {
      public bool isPs4 = false;
      public bool isXbox = false;
+    float changeBullet=0;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +19,7 @@ public class inputManagerP1 : MonoBehaviour
     {
         
     }
-    public  float JeftJoyAxisX()
+    public override float JeftJoyAxisX()
     {
         float axis = 0;
         if (isPs4)
@@ -33,7 +34,7 @@ public class inputManagerP1 : MonoBehaviour
             axis = 0;
         return Mathf.Clamp(axis, -1.0f, 1.0f);
     }
-    public  float JeftJoyAxisY()
+    public override float JeftJoyAxisY()
     {
         float axis = 0;
         if (isPs4)
@@ -49,12 +50,12 @@ public class inputManagerP1 : MonoBehaviour
         return Mathf.Clamp(axis, -1.0f, 1.0f);
     }
 
-    public  Vector3 JoystickAxis()
+    public override Vector3 JoystickAxis()
     {
         return new Vector3(JeftJoyAxisX(), JeftJoyAxisY(), 0);
     }
 
-    public  float DpadAxisX()
+    public override float DpadAxisX()
     {
         float axis = 0;
         if (isPs4)
@@ -69,7 +70,7 @@ public class inputManagerP1 : MonoBehaviour
             axis = 0;
         return Mathf.Clamp(axis, -1.0f, 1.0f);
     }
-    public  float DpadAxisY()
+    public override float DpadAxisY()
     {
         float axis = 0;
         if (isPs4)
@@ -85,12 +86,12 @@ public class inputManagerP1 : MonoBehaviour
         return Mathf.Clamp(axis, -1.0f, 1.0f);
     }
 
-    public  Vector3 DpadAxisAxis()
+    public override Vector3 DpadAxisAxis()
     {
         return new Vector3(DpadAxisX(), DpadAxisY(), 0);
     }
 
-    public  float LeftTriggerAxis()
+    public override float LeftTriggerAxis()
     {
         float axis = 0;
         if (isPs4)
@@ -105,7 +106,7 @@ public class inputManagerP1 : MonoBehaviour
             axis = 0;
         return Mathf.Clamp(axis, -1.0f, 1.0f);
     }
-    public  float RightTriggerAxis()
+    public override float RightTriggerAxis()
     {
         float axis = 0;
         if (isPs4)
@@ -121,7 +122,7 @@ public class inputManagerP1 : MonoBehaviour
         return Mathf.Clamp(axis, -1.0f, 1.0f);
     }
 
-    public  bool JumpButton()
+    public override bool JumpButton()
     {
         if (isPs4)
         {
@@ -133,7 +134,7 @@ public class inputManagerP1 : MonoBehaviour
         }
         return false;
     }
-    public  bool AccionButton()
+    public override bool AccionButton()
     {
         if (isPs4)
         {
@@ -144,5 +145,15 @@ public class inputManagerP1 : MonoBehaviour
             return Input.GetButtonDown("Xbox_B_1");
         }
         return false;
+    }
+    public override bool changeTipeBullet()
+    {
+        float LTrigger = RightTriggerAxis();
+        if (changeBullet == LTrigger)
+        {
+            return false;
+        }
+        changeBullet = LTrigger;
+        return true;
     }
 }

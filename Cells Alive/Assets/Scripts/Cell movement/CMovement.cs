@@ -23,14 +23,14 @@ using UnityEngine.UI;
 * @brief	: Movement Class.
 * @bug		: No bugs known.
 **/
-public class CMovement : MonoBehaviour {
+public class CMovement : Modul
+{
 
-    public inputManagerP1 P1;
 
-    public float velocity = 10f;
+
+    public float velocity = 0.002f;
     public Vector2 ActMovement;
     public Rigidbody2D RigBod;
-
 
     /**
     * @brief	: Keyboar inputs.
@@ -78,36 +78,36 @@ public class CMovement : MonoBehaviour {
     **/
     void InputController() {
         
-        if ((P1.JeftJoyAxisY() <= 0.3) && (P1.JeftJoyAxisX() <= -0.3)) {
-            moveDiagLeftUp();
-        }
-        else if ((P1.JeftJoyAxisY() <= 0.3) && (P1.JeftJoyAxisX() >= 0.3)) {
-            moveDiagRightUp();
-        }
-        else if ((P1.JeftJoyAxisY() >= -0.3) && (P1.JeftJoyAxisX() <= -0.3)) {
-            moveDiagLeftDown();
-        }
-        else if ((P1.JeftJoyAxisY() >= -0.3) && (P1.JeftJoyAxisX() >= 0.3)) {
-            moveDiagRightDown();
-        }
-
-        else if (P1.JeftJoyAxisY() >= 1) {
-            moveDown();
-        }
-        else if (P1.JeftJoyAxisY() <= -1) {
-            moveUp();
-        }
-
-        else if (P1.JeftJoyAxisX() <= -1) {
-            moveLeft();
-        }
-        else if (P1.JeftJoyAxisX() >= 1) {
-            moveRight();
-        }
-        else {
-            ActMovement.x = 0;
-            ActMovement.y = 0;
-        }
+        //if ((input.JeftJoyAxisY() <= 0.3) && (input.JeftJoyAxisX() <= -0.3)) {
+        //    moveDiagLeftUp();
+        //}
+        //else if ((input.JeftJoyAxisY() <= 0.3) && (input.JeftJoyAxisX() >= 0.3)) {
+        //    moveDiagRightUp();
+        //}
+        //else if ((input.JeftJoyAxisY() >= -0.3) && (input.JeftJoyAxisX() <= -0.3)) {
+        //    moveDiagLeftDown();
+        //}
+        //else if ((input.JeftJoyAxisY() >= -0.3) && (input.JeftJoyAxisX() >= 0.3)) {
+        //    moveDiagRightDown();
+        //}
+        //
+        //else if (input.JeftJoyAxisY() >= 1) {
+        //    moveDown();
+        //}
+        //else if (input.JeftJoyAxisY() <= -1) {
+        //    moveUp();
+        //}
+        //
+        //else if (input.JeftJoyAxisX() <= -1) {
+        //    moveLeft();
+        //}
+        //else if (input  .JeftJoyAxisX() >= 1) {
+        //    moveRight();
+        //}
+        //else {
+        //    ActMovement.x = 0;
+        //    ActMovement.y = 0;
+        //}
     }
 
 
@@ -117,11 +117,19 @@ public class CMovement : MonoBehaviour {
     * @bug		: No bugs known.
     **/
     void Update() {
+        if (!isActive)
+        {
+            return;
+        }
+        Vector3 dir = input.JoystickAxis();
+        dir.y *= -1;
+        dir.Normalize();
+        this.gameObject.transform.position += dir * velocity;
         //InputKeyboard();
-        InputController();
-        move(RigBod);
-        ActMovement.x = 0;
-        ActMovement.y = 0;
+        //InputController();
+        //move(RigBod);
+        //ActMovement.x = 0;
+        //ActMovement.y = 0;
 
     }
 
