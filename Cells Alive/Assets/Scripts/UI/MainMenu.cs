@@ -5,9 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    bool IfyouPassHere = false;
     public void PlayGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        if (IfyouPassHere == false)
+        {
+            IfyouPassHere = true;
+            SceneManager.LoadScene("Pausa");
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 
     public void PlayCredits()
