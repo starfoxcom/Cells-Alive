@@ -26,11 +26,11 @@ public class MovimientoInterno : MonoBehaviour
                 {
                     transform.Translate(0, -m_Speed * Time.deltaTime, 0);
                 }*/
-                if (P1.JeftJoyAxisY() >= 1)
+                if (P1.JeftJoyAxisY() <= -1)
                 {
                     transform.Translate(0, m_Speed * Time.deltaTime, 0);
                 }
-                else if (P1.JeftJoyAxisY() <= -1)
+                else if (P1.JeftJoyAxisY() >= 1 && !m_OnFloor)
                 {
                     transform.Translate(0, -m_Speed * Time.deltaTime, 0);
                 }
@@ -111,6 +111,7 @@ public class MovimientoInterno : MonoBehaviour
             {
                 m_OnModule = !m_OnModule;
                 transform.position = other.transform.position;
+                m_VelocityY = 0;
                 m_PressF = true;
             }
         }

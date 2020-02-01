@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 1220150390}
   - component: {fileID: 1220150394}
   - component: {fileID: 1220150393}
+  - component: {fileID: 1220150395}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -233,6 +234,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPs4: 0
   isXbox: 0
+--- !u!114 &1220150395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220150389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29167300b661cd64cba6861d69891461, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputsPlayer1: {fileID: 1220150394}
+  inputsPlayer2: {fileID: 1220150393}
 --- !u!1 &1630944051
 GameObject:
   m_ObjectHideFlags: 0
