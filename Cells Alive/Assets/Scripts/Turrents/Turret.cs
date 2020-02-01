@@ -15,6 +15,7 @@ public class Turret : Modul
     public bool isDownLeft= false;
     public float speed = 0.01f;
     public bool healingAmmunition;
+    public Canon cañonPos;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +43,31 @@ public class Turret : Modul
            globuloTransform.position.y + dir.y * ratio,
            globuloTransform.position.z);
         actualDir = dir;
+        float angle;
+        float moduleB;
+        float moduleA;
+        moduleA = actualDir.magnitude;
+        if (isDownLeft || isDownRight)
+        {
+            moduleB = new Vector3(-1, 0, 0).magnitude;
+            angle = Mathf.Acos(-actualDir.x / (moduleA * moduleB));
+        }
+        else
+        {
+            moduleB = new Vector3(1, 0, 0).magnitude;
+            angle = Mathf.Acos(actualDir.x / (moduleA * moduleB));
+        }
+        angle *= 57.2958f;
+        // transform.rotation = ;
+        // this.gameObject.transform.Rotate(0, 0, angle);
+        if (isDownLeft || isDownRight)
+        {
+            this.gameObject.transform.rotation = Quaternion.Euler(0.0f, 0.0f, angle - 270);
+        }
+        else
+        {
+            this.gameObject.transform.rotation = Quaternion.Euler(0.0f, 0.0f, angle - 90);
+        }
     }
 
     // Update is called once per frame
@@ -51,17 +77,17 @@ public class Turret : Modul
         {
             return;
         }
-        if (input.changeTipeBullet())
-        {
-            if (healingAmmunition)
-            {
-                healingAmmunition = false;
-            }
-            else
-            {
-                healingAmmunition = true;
-            }
-        }
+        //if (input.changeTipeBullet())
+        //{
+        //    if (healingAmmunition)
+        //    {
+        //        healingAmmunition = false;
+        //    }
+        //    else
+        //    {
+        //        healingAmmunition = true;
+        //    }
+        //}
         // Vector3 mousePos= Input.mousePosition;
         // mousePos= Camera.main.ScreenToWorldPoint(mousePos);
         Vector3 dir = actualDir;
@@ -147,32 +173,55 @@ public class Turret : Modul
             }
         }
         actualDir = dir;
+        float angle;
+        float moduleB;
+        float moduleA;
+        moduleA = actualDir.magnitude;
+        if (isDownLeft || isDownRight)
+        {
+            moduleB = new Vector3(-1, 0, 0).magnitude;
+            angle = Mathf.Acos(-actualDir.x / (moduleA * moduleB));
+        }
+        else
+        {
+            moduleB = new Vector3(1, 0, 0).magnitude;
+            angle = Mathf.Acos(actualDir.x / (moduleA * moduleB));
+        }
+        angle *= 57.2958f;
+        // transform.rotation = ;
+        // this.gameObject.transform.Rotate(0, 0, angle);
+        if (isDownLeft || isDownRight)
+        {
+            this.gameObject.transform.rotation = Quaternion.Euler(0.0f, 0.0f, angle - 270);
+        }
+        else
+        { 
+            this.gameObject.transform.rotation = Quaternion.Euler(0.0f, 0.0f, angle -90);
+        }
         this.transform.position = new Vector3(globuloTransform.position.x+dir.x*ratio,
             globuloTransform.position.y + dir.y * ratio,
             globuloTransform.position.z);
         //if (Input.GetMouseButtonDown(0))
         if (input.RightTriggerAxis()>=1)
         {
-            if (healingAmmunition)
-            {
-                Medicine newMedicine = Instantiate(medicinePrefab, this.transform.position, Quaternion.identity);
+            
+                Medicine newMedicine = Instantiate(medicinePrefab, cañonPos.gameObject.transform.position, Quaternion.identity);
                 //Vector3 dir = mousePos-GetComponent<Transform>().position;
                 Debug.Log(dir);
                 // dir.z = 0;
                 // dir.Normalize();
                 newMedicine.direction = new Vector2(dir.x, dir.y);
-            }
-            else
-            {
-                GlobuloRojo newMedicine = Instantiate(AtackPrefab, this.transform.position, Quaternion.identity);
-                //Vector3 dir = mousePos-GetComponent<Transform>().position;
-                Debug.Log(dir);
-                // dir.z = 0;
-                // dir.Normalize();
-                newMedicine.direction = new Vector2(dir.x, dir.y);
-            }
             
         }
-        
+        else if (input.LeftTriggerAxis()>=1)
+        {
+            GlobuloRojo newMedicine = Instantiate(AtackPrefab, cañonPos.gameObject.transform.position, Quaternion.identity);
+            //Vector3 dir = mousePos-GetComponent<Transform>().position;
+            Debug.Log(dir);
+            // dir.z = 0;
+            // dir.Normalize();
+            newMedicine.direction = new Vector2(dir.x, dir.y);
+        }
+
     }
 }

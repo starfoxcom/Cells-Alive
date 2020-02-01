@@ -9,15 +9,20 @@ public class MovimientoInterno : MovimientoInter
     public inputManagerP1 P1;
     public float m_Speed, m_JumpBust, m_Gravity;
     float m_VelocityY, m_VelocityX;
-    
+
     // Update is called once per frame
     void Update()
     {
-        if (P1.JumpButton())
+        if (m_OnModule)
         {
-            m_JumpBust = 0.2f;
-            separate = true;
+            currentModul.onUpdate();
+            return;
         }
+        //if (P1.JumpButton())
+        //{
+        //    m_JumpBust = 0.2f;
+        //    separate = true;
+        //}
         if (separate)
         {
             SeparateTime += Time.deltaTime;
@@ -41,6 +46,7 @@ public class MovimientoInterno : MovimientoInter
         dir.z = 0;
         dir.Normalize();
         this.transform.position += dir * m_Speed;
+        paredes();
         //if (!m_OnModule)//Player not on a module
         //{
         //    if (m_OnStair)//Player on a stair
@@ -135,6 +141,7 @@ public class MovimientoInterno : MovimientoInter
         {
             m_OnStair = true;
         }
+
         //if (other.tag == "Stair" && P1.JeftJoyAxisY() != 0)
         //{
         //    m_OnStair = true;
@@ -149,16 +156,16 @@ public class MovimientoInterno : MovimientoInter
         ////        m_PressF = true;
         ////    }
         ////}
-        //if (other.tag == "Module" && P1.AccionButton())
-        //{
-        //
-        //    currentModul = other.GetComponent<Modul>();
-        //
-        //    currentModul.input = P1;
-        //    currentModul.myManager = this;
-        //    m_OnModule = true;
-        //    return;
-        //}
+        if (other.tag == "Module" && P1.AccionButton())
+        {
+
+            currentModul = other.GetComponent<Modul>();
+
+            currentModul.input = P1;
+            currentModul.myManager = this;
+            m_OnModule = true;
+            return;
+        }
     }
     private void OnTriggerExit(Collider other)
     {
@@ -175,7 +182,7 @@ public class MovimientoInterno : MovimientoInter
             Hit = Physics2D.Raycast(this.gameObject.transform.position, new Vector2(0, -1), 0.2f);
             if (Hit.collider == null)
                 fall = true;
-            else if(Hit.collider.gameObject.tag== "Floor")
+            else if (Hit.collider.gameObject.tag == "Floor")
             {
                 m_JumpBust = 0;
                 fall = false;
@@ -198,14 +205,14 @@ public class MovimientoInterno : MovimientoInter
             fall = false;
         }
         // Debug.Log(vyNegative);
-        Hit = Physics2D.Raycast(this.gameObject.transform.position, new Vector2(0, 1), vy-0.2f);
+        Hit = Physics2D.Raycast(this.gameObject.transform.position, new Vector2(0, 1), vy - 0.2f);
         if (Hit.collider != null && Hit.collider.tag == "Floor" && fall)
         {
             if (this.separate)
             {
                 return;
             }
-            
+
             fallTime = 0;
             vy = Hit.collider.gameObject.GetComponent<pivot>().pTranform.position.y;
             this.transform.position = new Vector3(this.gameObject.transform.position.x,
@@ -226,6 +233,24 @@ public class MovimientoInterno : MovimientoInter
         //    this.isGrounded = true;
         //    fall = true;
         //}
+    }
+    public void paredes()
+    {
+        RaycastHit2D Hit;
+        Hit = Physics2D.Raycast(this.gameObject.transform.position, new Vector2(1, 0), 0.02f);
+        if (Hit.collider != null && Hit.collider.tag == "Wall")
+        {
+            this.transform.position = new Vector3(Hit.collider.gameObject.GetComponent<pivot>().pTranform.position.x,
+                this.gameObject.transform.position.y,
+                this.transform.position.z);
+        }
+        Hit = Physics2D.Raycast(this.gameObject.transform.position, new Vector2(-1, 0), 0.02f);
+        if (Hit.collider != null && Hit.collider.tag == "Wall")
+        {
+            this.transform.position = new Vector3(Hit.collider.gameObject.GetComponent<pivot>().pTranform.position.x,
+                this.gameObject.transform.position.y,
+                this.transform.position.z);
+        }
     }
 
 }

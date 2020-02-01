@@ -7,6 +7,9 @@ TagManager:
   - Floor
   - Stair
   - Module
+  - GlobuloBlanco
+  - GlobuloRojo
+  - Wall
   layers:
   - Default
   - TransparentFX

@@ -6,7 +6,7 @@ public class Medicine : MonoBehaviour
 {
     GameObject myObject;
     public Vector2 direction;
-    float speed=0.01f;
+    public float speed=0.05f;
     // Start is called before the first frame update
     void Start()
     {
