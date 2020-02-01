@@ -25,6 +25,8 @@ using UnityEngine.UI;
 **/
 public class CMovement : MonoBehaviour {
 
+    public inputManagerP1 P1;
+
     public float velocity = 10f;
     public Vector2 ActMovement;
     public Rigidbody2D RigBod;
@@ -75,17 +77,31 @@ public class CMovement : MonoBehaviour {
     * @bug		: No bugs known.
     **/
     void InputController() {
-        if (Input.GetAxis("Verical_Controller")  <= 0) {
-            moveUp();
+        
+        if ((P1.JeftJoyAxisY() <= 0.3) && (P1.JeftJoyAxisX() <= -0.3)) {
+            moveDiagLeftUp();
         }
-        else if (Input.GetAxis("Verical_Controller") >= 0) {
-            moveDown();
+        else if ((P1.JeftJoyAxisY() <= 0.3) && (P1.JeftJoyAxisX() >= 0.3)) {
+            moveDiagRightUp();
+        }
+        else if ((P1.JeftJoyAxisY() >= -0.3) && (P1.JeftJoyAxisX() <= -0.3)) {
+            moveDiagLeftDown();
+        }
+        else if ((P1.JeftJoyAxisY() >= -0.3) && (P1.JeftJoyAxisX() >= 0.3)) {
+            moveDiagRightDown();
         }
 
-        else if (Input.GetKey(KeyCode.A)) {
+        else if (P1.JeftJoyAxisY() >= 1) {
+            moveDown();
+        }
+        else if (P1.JeftJoyAxisY() <= -1) {
+            moveUp();
+        }
+
+        else if (P1.JeftJoyAxisX() <= -1) {
             moveLeft();
         }
-        else if (Input.GetKey(KeyCode.D)) {
+        else if (P1.JeftJoyAxisX() >= 1) {
             moveRight();
         }
         else {
@@ -101,8 +117,8 @@ public class CMovement : MonoBehaviour {
     * @bug		: No bugs known.
     **/
     void Update() {
-        InputKeyboard();
-        //InputController();
+        //InputKeyboard();
+        InputController();
         move(RigBod);
         ActMovement.x = 0;
         ActMovement.y = 0;

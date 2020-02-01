@@ -151,6 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d664dd744574254383ce53c09d6af85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  P1: {fileID: 1500052929}
   velocity: 10
   ActMovement: {x: 0, y: 0}
   RigBod: {fileID: 466877081}
@@ -249,6 +250,9 @@ GameObject:
   - component: {fileID: 1500052927}
   - component: {fileID: 1500052926}
   - component: {fileID: 1500052925}
+  - component: {fileID: 1500052928}
+  - component: {fileID: 1500052929}
+  - component: {fileID: 1500052930}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -321,3 +325,45 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1500052928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500052924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29167300b661cd64cba6861d69891461, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputsPlayer1: {fileID: 1500052929}
+  inputsPlayer2: {fileID: 1500052930}
+--- !u!114 &1500052929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500052924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac1bb03c9c7860643bc863bd508cfd54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPs4: 0
+  isXbox: 0
+--- !u!114 &1500052930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500052924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4e85f0a6961c134f84149c140483948, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPs4: 0
+  isXbox: 0
