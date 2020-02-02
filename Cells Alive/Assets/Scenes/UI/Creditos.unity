@@ -208,8 +208,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Roberto Charreton\n\nSergio Diaz\nDiego Castellanos\nJesus del Moral\n\nIrving
-    Nicoli\nSaul Vladimir\nBruno D\xEDaz\n\n\xC1ngel Inda\n\nJuan Carlos Padilla"
+  m_Text: "Roberto Charreton\n\nSergio Diaz\nDiego Castellanos\nJesus del Moral\nJorge
+    Zamudio\n\nIrving Nicoli\nSaul Vladimir\nBruno D\xEDaz\n\n\xC1ngel Inda\n\nJuan
+    Carlos Padilla"
 --- !u!222 &45509437
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -426,6 +427,7 @@ MonoBehaviour:
 
 
     MECHANICS
+
 
 
 

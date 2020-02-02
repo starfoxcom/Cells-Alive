@@ -310,7 +310,7 @@ MonoBehaviour:
     type: 3}
   enemyPrefab: {fileID: 3171831714433954522, guid: e93dd4f88122d0c49b2a2353c86fb419,
     type: 3}
-  numberOfMembers: 400
+  numberOfMembers: 250
   numberOfEnemies: 0
   members: []
   enemies: []
@@ -388,7 +388,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 50
+  orthographic size: 70
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -757,6 +757,11 @@ PrefabInstance:
       propertyPath: my
       value: 
       objectReference: {fileID: 360149141}
+    - target: {fileID: 1194192105293973018, guid: bb5e76279215587419071b50edfe687d,
+        type: 3}
+      propertyPath: velocity
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 1194192105293973019, guid: bb5e76279215587419071b50edfe687d,
         type: 3}
       propertyPath: m_Name
@@ -864,6 +869,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1547387250546146636, guid: 129cc2975dd3d9b45b8f20e0dbab743c,
         type: 3}
+    - target: {fileID: 1194192105294044665, guid: bb5e76279215587419071b50edfe687d,
+        type: 3}
+      propertyPath: speed
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 1194192105406119285, guid: bb5e76279215587419071b50edfe687d,
         type: 3}
       propertyPath: Ammunation
@@ -886,6 +896,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8970927103901217365, guid: 383cce5d99e710f4696c9ad1670dfbec,
         type: 3}
+    - target: {fileID: 1194192105406119285, guid: bb5e76279215587419071b50edfe687d,
+        type: 3}
+      propertyPath: speed
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 1194192105997597290, guid: bb5e76279215587419071b50edfe687d,
         type: 3}
       propertyPath: Ammunation
@@ -908,6 +923,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8970927103901217365, guid: 383cce5d99e710f4696c9ad1670dfbec,
         type: 3}
+    - target: {fileID: 1194192105997597290, guid: bb5e76279215587419071b50edfe687d,
+        type: 3}
+      propertyPath: speed
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 1194192106385255290, guid: bb5e76279215587419071b50edfe687d,
         type: 3}
       propertyPath: Ammunation
@@ -930,6 +950,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8970927103901217365, guid: 383cce5d99e710f4696c9ad1670dfbec,
         type: 3}
+    - target: {fileID: 1194192106385255290, guid: bb5e76279215587419071b50edfe687d,
+        type: 3}
+      propertyPath: speed
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 1194192106865278499, guid: bb5e76279215587419071b50edfe687d,
         type: 3}
       propertyPath: P1
@@ -938,7 +963,7 @@ PrefabInstance:
     - target: {fileID: 1194192106865278499, guid: bb5e76279215587419071b50edfe687d,
         type: 3}
       propertyPath: m_Speed
-      value: 0.6
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 1194192106865278499, guid: bb5e76279215587419071b50edfe687d,
         type: 3}
@@ -968,7 +993,7 @@ PrefabInstance:
     - target: {fileID: 2486569299289879790, guid: bb5e76279215587419071b50edfe687d,
         type: 3}
       propertyPath: m_Speed
-      value: 0.6
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 6887736198946552334, guid: bb5e76279215587419071b50edfe687d,
         type: 3}
