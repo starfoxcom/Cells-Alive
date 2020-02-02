@@ -19,12 +19,12 @@ public class Modul : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //PauseMenu pause = FindObjectOfType<PauseMenu>();
-        //if (pause.GameIsPaused)
-        //{
-        //    mymodul.isActive = false;
-        //    return;
-        //}
+        PauseMenu pause = FindObjectOfType<PauseMenu>();
+        if (pause.GameIsPaused)
+        {
+            mymodul.isActive = false;
+            return;
+        }
     }
     public void onUpdate()
     {

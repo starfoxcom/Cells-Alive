@@ -19,6 +19,11 @@ public class Medicine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        PauseMenu pause = FindObjectOfType<PauseMenu>();
+        if (pause.GameIsPaused)
+        {
+            return;
+        }
         this.transform.position = new Vector3(this.transform.position.x+(direction.x*speed),
             this.transform.position.y + (direction.y * speed),
             this.transform.position.z);

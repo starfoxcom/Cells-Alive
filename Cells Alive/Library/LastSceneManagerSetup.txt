@@ -1,9 +1,5 @@
 sceneSetups:
-<<<<<<< HEAD
 - path: Assets/Scenes/UI/Menu.unity
-=======
-- path: Assets/Scenes/UI/Game.unity
->>>>>>> develop
   isLoaded: 1
   isActive: 1
   isSubScene: 0

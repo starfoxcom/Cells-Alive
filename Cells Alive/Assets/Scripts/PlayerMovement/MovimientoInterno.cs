@@ -13,11 +13,11 @@ public class MovimientoInterno : MovimientoInter
     // Update is called once per frame
     void Update()
     {
-        //PauseMenu pause = FindObjectOfType<PauseMenu>();
-        //if (pause.GameIsPaused)
-        //{
-        //    return;
-        //}
+        PauseMenu pause = FindObjectOfType<PauseMenu>();
+        if (pause.GameIsPaused)
+        {
+            return;
+        }
         if (m_OnModule)
         {
             currentModul.onUpdate();
