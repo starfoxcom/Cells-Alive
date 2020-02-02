@@ -165,12 +165,15 @@ public class MovimientoInterno2 : MovimientoInter
             {
                 return;
             }
-            currentModul = other.GetComponent<Modul>();
-
-            currentModul.input = P1;
-            currentModul.myManager = this;
-            m_OnModule = true;
-            return;
+            else
+            {
+                currentModul = other.GetComponent<Modul>();
+                currentModul.isActive = true;
+                currentModul.input = P1;
+                currentModul.myManager = this;
+                m_OnModule = true;
+                return;
+            }
         }
     }
     private void OnTriggerExit(Collider other)
@@ -224,7 +227,7 @@ public class MovimientoInterno2 : MovimientoInter
             this.transform.position = new Vector3(this.gameObject.transform.position.x,
                Hit.collider.gameObject.GetComponent<pivot>().pTranform.position.y,
                 this.transform.position.z);
-            Debug.Log("Raytcast");
+            //Debug.Log("Raytcast");
         }
         else
         {

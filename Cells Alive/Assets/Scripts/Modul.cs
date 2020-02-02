@@ -31,12 +31,13 @@ public class Modul : MonoBehaviour
         myManager.isActive = false;
         mymodul.isActive = true;
         mymodul.input = input;
-        if (input.AccionButton()&&time>0.2f)
+        if (input.AccionButton() && time > 0.2f)
         {
             time = 0;
             myManager.isActive = true;
             myManager.m_OnModule = false;
             mymodul.isActive = false;
+            isActive = false;
         }
         time += Time.deltaTime;
     }

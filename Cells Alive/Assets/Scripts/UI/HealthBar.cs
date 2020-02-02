@@ -44,7 +44,7 @@ public class HealthBar : MonoBehaviour
     {
         if (Health<=0)
         {
-            SceneManager.LoadScene("Menu");
+            FindObjectOfType<PauseMenu>().ReturnMenu();
         }
         if (Input.GetKeyDown(KeyCode.O))
         {

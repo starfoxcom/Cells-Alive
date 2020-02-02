@@ -44,6 +44,6 @@ public class Detectedcrontollers : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //FindObjectOfType<PauseMenu>().Onupdate();
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class ChangeTorret : MonoBehaviour
 {
     public Turret[] torres= {new Turret(), new Turret(), new Turret(), new Turret() };
-
+    public int Ammunition;
     //public bool healingAmmunition = true;
     // Start is called before the first frame update
     void Start()
