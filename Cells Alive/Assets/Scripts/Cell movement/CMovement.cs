@@ -31,7 +31,7 @@ public class CMovement : Modul
     public float velocity = 0.002f;
     public Vector2 ActMovement;
     public Rigidbody2D RigBod;
-
+    public SpriteRenderer my;
     /**
     * @brief	: Keyboar inputs.
     * @bug		: No bugs known.
@@ -120,8 +120,10 @@ public class CMovement : Modul
 
         if (!isActive)
         {
+           my.color =new Color(0.6f, 0.6f, 0.6f, 1);
             return;
         }
+        my.color = new Color(1, 1, 1, 1);
         Vector3 dir = input.JoystickAxis();
         dir.y *= -1;
         dir.Normalize();

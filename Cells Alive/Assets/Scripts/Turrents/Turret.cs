@@ -72,10 +72,17 @@ public class Turret : Modul
     }
 
     // Update is called once per frame
+    void ajusteTurrent()
+    {
+        this.transform.position = new Vector3(globuloTransform.position.x + actualDir.x * ratio,
+            globuloTransform.position.y + actualDir.y * ratio,
+            globuloTransform.position.z);
+    }
     void Update()
     {
         if (!isActive)
         {
+            ajusteTurrent();
             return;
         }
         //if (input.changeTipeBullet())
@@ -199,8 +206,8 @@ public class Turret : Modul
         { 
             this.gameObject.transform.rotation = Quaternion.Euler(0.0f, 0.0f, angle -90);
         }
-        this.transform.position = new Vector3(globuloTransform.position.x+dir.x*ratio,
-            globuloTransform.position.y + dir.y * ratio,
+        this.transform.position = new Vector3(globuloTransform.position.x+dir.x*ratio*1.2f,
+            globuloTransform.position.y + dir.y * ratio * 1.2f,
             globuloTransform.position.z);
         //if (Input.GetMouseButtonDown(0))
         if (input.RightTriggerAxis()>=1&& Ammunation.Ammunition>0)
