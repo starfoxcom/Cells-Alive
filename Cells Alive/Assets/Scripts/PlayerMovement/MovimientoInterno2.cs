@@ -11,7 +11,11 @@ public class MovimientoInterno2 : MovimientoInter
     // Update is called once per frame
     void Update()
     {
-
+        //PauseMenu pause = FindObjectOfType<PauseMenu>();
+        //if (pause.GameIsPaused)
+        //{
+        //    return;
+        //}
         if (m_OnModule)
         {
             currentModul.onUpdate();
@@ -157,7 +161,10 @@ public class MovimientoInterno2 : MovimientoInter
         ////}
         if (other.tag == "Module" && P1.AccionButton())
         {
-
+            if (other.GetComponent<Modul>().isActive)
+            {
+                return;
+            }
             currentModul = other.GetComponent<Modul>();
 
             currentModul.input = P1;
