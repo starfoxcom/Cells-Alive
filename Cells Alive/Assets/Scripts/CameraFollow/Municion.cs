@@ -48,12 +48,12 @@ public class Zones
             z_StillAmmos = !z_StillAmmos;
             z_Time = 0;
         }
-        GameObject PJ = GameObject.FindWithTag("Player");
+        GameObject PJ = GameObject.FindWithTag("BloodCell");
         for (int i = 0; i < z_Ammos.Count; i++)
         {
             if (Mathf.Pow(Mathf.Pow(PJ.transform.position.x - z_Ammos[i].a_Obj.transform.position.x, 2) + Mathf.Pow(PJ.transform.position.y - z_Ammos[i].a_Obj.transform.position.y, 2), .5f) <= 2)
             {
-                PJ.GetComponent<MovGenerico>().m_Ammunition += 10;
+                PJ.GetComponent<ChangeTorret>().Ammunition += 10;
                 GameObject.Destroy(z_Ammos[i].a_Obj);
                 z_Ammos.Remove(z_Ammos[i]);
                 break;

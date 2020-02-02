@@ -878,12 +878,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02d1310ca5a82bd47887be61bd46bf66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputs: []
+  Index: 0
   newGame: {fileID: 1891609709}
   credits: {fileID: 521894067}
   exit: {fileID: 1235889266}
-  inputs: []
   mainmenu: {fileID: 999809820}
-  Index: 0
 --- !u!114 &1092418603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1248,7 +1248,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ' CELLS ALIVE '
+  m_Text: "\tliving cells    "
 --- !u!222 &1416401239
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -7,6 +7,7 @@ public class Turret : Modul
     public Medicine medicinePrefab;
     public GlobuloRojo AtackPrefab;
     public Transform globuloTransform;
+    public ChangeTorret Ammunation;
     public Vector3 actualDir;
     public float ratio;
     public bool isUpRight=false;
@@ -202,9 +203,9 @@ public class Turret : Modul
             globuloTransform.position.y + dir.y * ratio,
             globuloTransform.position.z);
         //if (Input.GetMouseButtonDown(0))
-        if (input.RightTriggerAxis()>=1)
+        if (input.RightTriggerAxis()>=1&& Ammunation.Ammunition>0)
         {
-            
+            Ammunation.Ammunition--;
                 Medicine newMedicine = Instantiate(medicinePrefab, cañonPos.gameObject.transform.position, Quaternion.identity);
                 //Vector3 dir = mousePos-GetComponent<Transform>().position;
                 Debug.Log(dir);
@@ -213,8 +214,9 @@ public class Turret : Modul
                 newMedicine.direction = new Vector2(dir.x, dir.y);
             
         }
-        else if (input.LeftTriggerAxis()>=1)
+        else if (input.LeftTriggerAxis()>=1 && Ammunation.Ammunition > 0)
         {
+            Ammunation.Ammunition--; 
             GlobuloRojo newMedicine = Instantiate(AtackPrefab, cañonPos.gameObject.transform.position, Quaternion.identity);
             //Vector3 dir = mousePos-GetComponent<Transform>().position;
             Debug.Log(dir);
