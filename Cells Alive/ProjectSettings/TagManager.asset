@@ -10,6 +10,7 @@ TagManager:
   - GlobuloBlanco
   - GlobuloRojo
   - Wall
+  - MapWall
   layers:
   - Default
   - TransparentFX
