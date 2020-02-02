@@ -480,6 +480,11 @@ PrefabInstance:
       propertyPath: P1
       value: 
       objectReference: {fileID: 1002374937}
+    - target: {fileID: 1194192106865278499, guid: bb5e76279215587419071b50edfe687d,
+        type: 3}
+      propertyPath: m_Speed
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 2486569299289879790, guid: bb5e76279215587419071b50edfe687d,
         type: 3}
       propertyPath: P1
