@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+using UnityEngine.SceneManagement;
+
+
 public class HealthBar : MonoBehaviour
 {
     public Transform HealthB;
@@ -39,6 +42,10 @@ public class HealthBar : MonoBehaviour
 
     void Update()
     {
+        if (Health<=0)
+        {
+            SceneManager.LoadScene("Menu");
+        }
         if (Input.GetKeyDown(KeyCode.O))
         {
             TakeDamage(10);
