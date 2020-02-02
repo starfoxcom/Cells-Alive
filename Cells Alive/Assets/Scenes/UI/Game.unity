@@ -310,12 +310,12 @@ MonoBehaviour:
     type: 3}
   enemyPrefab: {fileID: 3171831714433954522, guid: e93dd4f88122d0c49b2a2353c86fb419,
     type: 3}
-  numberOfMembers: 100
+  numberOfMembers: 400
   numberOfEnemies: 0
   members: []
   enemies: []
-  bounds: 85
-  spawnRadius: 442.1
+  bounds: 321.1
+  spawnRadius: 999.6
 --- !u!4 &782930402
 Transform:
   m_ObjectHideFlags: 0
@@ -643,6 +643,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Map
       objectReference: {fileID: 0}
+    - target: {fileID: 7490429976959310812, guid: c0e4c63195e384d40a36f4c1d1d1be85,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 7490429976959310813, guid: c0e4c63195e384d40a36f4c1d1d1be85,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -656,7 +661,7 @@ PrefabInstance:
     - target: {fileID: 7490429976959310813, guid: c0e4c63195e384d40a36f4c1d1d1be85,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 41
+      value: 167
       objectReference: {fileID: 0}
     - target: {fileID: 7490429976959310813, guid: c0e4c63195e384d40a36f4c1d1d1be85,
         type: 3}
@@ -847,21 +852,84 @@ PrefabInstance:
       propertyPath: Ammunation
       value: 
       objectReference: {fileID: 1194192105244467818}
+    - target: {fileID: 1194192105294044665, guid: bb5e76279215587419071b50edfe687d,
+        type: 3}
+      propertyPath: medicinePrefab
+      value: 
+      objectReference: {fileID: 8970927103901217365, guid: 383cce5d99e710f4696c9ad1670dfbec,
+        type: 3}
+    - target: {fileID: 1194192105294044665, guid: bb5e76279215587419071b50edfe687d,
+        type: 3}
+      propertyPath: AtackPrefab
+      value: 
+      objectReference: {fileID: 1547387250546146636, guid: 129cc2975dd3d9b45b8f20e0dbab743c,
+        type: 3}
     - target: {fileID: 1194192105406119285, guid: bb5e76279215587419071b50edfe687d,
+        type: 3}
+      propertyPath: Ammunation
+      value: 
+      objectReference: {fileID: 1194192105244467818}
+    - target: {fileID: 1194192105406119285, guid: bb5e76279215587419071b50edfe687d,
+        type: 3}
+      propertyPath: AtackPrefab
+      value: 
+      objectReference: {fileID: 1547387250546146636, guid: 129cc2975dd3d9b45b8f20e0dbab743c,
+        type: 3}
+    - target: {fileID: 1194192105406119285, guid: bb5e76279215587419071b50edfe687d,
+        type: 3}
+      propertyPath: globuloTransform
+      value: 
+      objectReference: {fileID: 1194192105244467821}
+    - target: {fileID: 1194192105406119285, guid: bb5e76279215587419071b50edfe687d,
+        type: 3}
+      propertyPath: medicinePrefab
+      value: 
+      objectReference: {fileID: 8970927103901217365, guid: 383cce5d99e710f4696c9ad1670dfbec,
+        type: 3}
+    - target: {fileID: 1194192105997597290, guid: bb5e76279215587419071b50edfe687d,
         type: 3}
       propertyPath: Ammunation
       value: 
       objectReference: {fileID: 1194192105244467818}
     - target: {fileID: 1194192105997597290, guid: bb5e76279215587419071b50edfe687d,
         type: 3}
-      propertyPath: Ammunation
+      propertyPath: globuloTransform
       value: 
-      objectReference: {fileID: 1194192105244467818}
+      objectReference: {fileID: 1194192105244467821}
+    - target: {fileID: 1194192105997597290, guid: bb5e76279215587419071b50edfe687d,
+        type: 3}
+      propertyPath: AtackPrefab
+      value: 
+      objectReference: {fileID: 1547387250546146636, guid: 129cc2975dd3d9b45b8f20e0dbab743c,
+        type: 3}
+    - target: {fileID: 1194192105997597290, guid: bb5e76279215587419071b50edfe687d,
+        type: 3}
+      propertyPath: medicinePrefab
+      value: 
+      objectReference: {fileID: 8970927103901217365, guid: 383cce5d99e710f4696c9ad1670dfbec,
+        type: 3}
     - target: {fileID: 1194192106385255290, guid: bb5e76279215587419071b50edfe687d,
         type: 3}
       propertyPath: Ammunation
       value: 
       objectReference: {fileID: 1194192105244467818}
+    - target: {fileID: 1194192106385255290, guid: bb5e76279215587419071b50edfe687d,
+        type: 3}
+      propertyPath: AtackPrefab
+      value: 
+      objectReference: {fileID: 1547387250546146636, guid: 129cc2975dd3d9b45b8f20e0dbab743c,
+        type: 3}
+    - target: {fileID: 1194192106385255290, guid: bb5e76279215587419071b50edfe687d,
+        type: 3}
+      propertyPath: globuloTransform
+      value: 
+      objectReference: {fileID: 1194192105244467821}
+    - target: {fileID: 1194192106385255290, guid: bb5e76279215587419071b50edfe687d,
+        type: 3}
+      propertyPath: medicinePrefab
+      value: 
+      objectReference: {fileID: 8970927103901217365, guid: 383cce5d99e710f4696c9ad1670dfbec,
+        type: 3}
     - target: {fileID: 1194192106865278499, guid: bb5e76279215587419071b50edfe687d,
         type: 3}
       propertyPath: P1
@@ -935,6 +1003,12 @@ Transform:
 --- !u!4 &1194192105244467820 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2486569298630352428, guid: bb5e76279215587419071b50edfe687d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1194192105244467817}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1194192105244467821 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1194192105293973023, guid: bb5e76279215587419071b50edfe687d,
     type: 3}
   m_PrefabInstance: {fileID: 1194192105244467817}
   m_PrefabAsset: {fileID: 0}
