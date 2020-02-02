@@ -7,6 +7,7 @@ public class PauseMenu : MonoBehaviour
 {
     public bool GameIsPaused = false;
     public GameObject MenuPause;
+    public InputManager []inputs;
 
     void Start()
     {
@@ -14,18 +15,35 @@ public class PauseMenu : MonoBehaviour
     }
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            if(GameIsPaused)
-            {
-                Resume();
-            }
-            else
-            {
-                Pause();
-            }
-
-        }
+        //inputs = FindObjectsOfType<InputManager>();
+        //for (int i = 0; i < inputs.Length; i++)
+        //{
+        //    if (inputs[i].PauseButton())
+        //    {
+        //        if (GameIsPaused)
+        //        {
+        //            Resume();
+        //        }
+        //        else
+        //        {
+        //            Pause();
+        //        }
+        //
+        //    }
+        //
+        //}
+        //if(Input.GetKey(KeyCode.Escape))
+        //{
+        //    if(GameIsPaused)
+        //    {
+        //        Resume();
+        //    }
+        //    else
+        //    {
+        //        Pause();
+        //    }
+        //
+        //}
         
     }
 
@@ -47,7 +65,40 @@ public class PauseMenu : MonoBehaviour
     {
         GameIsPaused = false;
         Time.timeScale = 1f;
-        Destroy(gameObject);
+        Destroy(this.gameObject);
         SceneManager.LoadScene("Menu");
+    }
+
+    public void Onupdate()
+    {
+        inputs = FindObjectsOfType<InputManager>();
+        for (int i = 0; i < inputs.Length; i++)
+        {
+            if (inputs[i].PauseButton())
+            {
+                if (GameIsPaused)
+                {
+                    Resume();
+                }
+                else
+                {
+                    Pause();
+                }
+
+            }
+
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (GameIsPaused)
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+            }
+
+        }
     }
 }
