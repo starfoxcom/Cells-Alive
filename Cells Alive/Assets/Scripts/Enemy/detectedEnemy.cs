@@ -19,7 +19,8 @@ public class detectedEnemy : MonoBehaviour
       if (GetComponent<SphereCollider>().bounds.Intersects(bloodCell.bounds))
       {
         Destroy(this.gameObject);
-        bloodCell.gameObject.GetComponent<BloodCell>().live -= 5;
+            //bloodCell.gameObject.GetComponent<BloodCell>().live -= 5;
+            FindObjectOfType<HealthBar>().TakeDamage(5);
       }
         RedCell=FindObjectsOfType<GlobuloRojo>();
         for (int i = 0; i < RedCell.Length; i++)
