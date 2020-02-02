@@ -6,6 +6,7 @@ public class detectedEnemy : MonoBehaviour
 {
   // Start is called before the first frame update
   public SphereCollider bloodCell;
+  public GlobuloRojo []RedCell;
     void Start()
     {
         
@@ -18,6 +19,16 @@ public class detectedEnemy : MonoBehaviour
       if (GetComponent<SphereCollider>().bounds.Intersects(bloodCell.bounds))
       {
         Destroy(this.gameObject);
+        bloodCell.gameObject.GetComponent<BloodCell>().live -= 5;
       }
+        RedCell=FindObjectsOfType<GlobuloRojo>();
+        for (int i = 0; i < RedCell.Length; i++)
+        {
+            if (GetComponent<SphereCollider>().bounds.Intersects(RedCell[i].GetComponent<CircleCollider2D>().bounds))
+            {
+                Destroy(this.gameObject);
+            }
+        }
+        
     }
 }

@@ -22,11 +22,13 @@ public class GlobuloRojo : MonoBehaviour
         this.transform.position = new Vector3(this.transform.position.x + (direction.x * speed),
             this.transform.position.y + (direction.y * speed),
             this.transform.position.z);
-        //RaycastHit2D hit = Physics2D.Raycast(this.transform.position, direction, 0.00002f);
-        //if (hit.collider != null && hit.collider.gameObject.tag == "Tejido")
-        //{
-        //    hit.collider.gameObject.GetComponent<TejidoMalo>().porcentaje += 0.02f;
-        //    Destroy(this.gameObject);
-        //}
+       RaycastHit2D hit = Physics2D.Raycast(this.transform.position, direction, 0.00002f);
+       if (hit.collider != null && hit.collider.gameObject.tag == "Virus")
+       {
+           //hit.collider.gameObject.GetComponent<TejidoMalo>().porcentaje += 0.02f;
+           
+           Destroy(hit.collider.gameObject);
+           Destroy(this.gameObject);
+       }
     }
 }
