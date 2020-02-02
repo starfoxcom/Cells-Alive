@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BloodCell : MonoBehaviour
 {
+    public float live = 100;
+
     // Start is called before the first frame update
     void Start()
     {
