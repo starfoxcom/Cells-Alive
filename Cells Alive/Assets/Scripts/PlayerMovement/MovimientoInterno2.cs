@@ -224,7 +224,7 @@ public class MovimientoInterno2 : MovimientoInter
             this.transform.position = new Vector3(this.gameObject.transform.position.x,
                Hit.collider.gameObject.GetComponent<pivot>().pTranform.position.y,
                 this.transform.position.z);
-            Debug.Log("Raytcast");
+            //Debug.Log("Raytcast");
         }
         else
         {

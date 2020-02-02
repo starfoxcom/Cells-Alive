@@ -156,4 +156,16 @@ public class inputManagerP1 : InputManager
         changeBullet = LTrigger;
         return true;
     }
+    public override bool PauseButton()
+    {
+        if (isPs4)
+        {
+            return Input.GetButtonDown("Ps4_Start_1");
+        }
+        else if (isXbox)
+        {
+            return Input.GetButtonDown("Xbox_Start_1");
+        }
+        return false;
+    }
 }

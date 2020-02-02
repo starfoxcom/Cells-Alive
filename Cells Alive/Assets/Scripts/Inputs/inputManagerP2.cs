@@ -155,6 +155,19 @@ public class inputManagerP2 : InputManager
         changeBullet = LTrigger;
         return true;
     }
+    public override bool PauseButton()
+    {
+
+        if (isPs4)
+        {
+            return Input.GetButtonDown("Ps4_Start_1");
+        }
+        else if (isXbox)
+        {
+            return Input.GetButtonDown("Xbox_Start_2");
+        }
+        return false;
+    }
     // public static bool jostickMoveHorizontal()
     // {
     //     if (EjeHorizontal() != 0)

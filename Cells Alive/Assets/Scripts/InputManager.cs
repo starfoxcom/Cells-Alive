@@ -62,6 +62,11 @@ public class InputManager : MonoBehaviour
 
         return false;
     }
+    public virtual bool PauseButton()
+    {
+
+        return false;
+    }
     public virtual bool changeTipeBullet()
     {
         return false;
