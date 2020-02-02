@@ -28,12 +28,16 @@ public class Medicine : MonoBehaviour
             this.transform.position.y + (direction.y * speed),
             this.transform.position.z);
         //direction *= 0.0002f;
-        RaycastHit2D hit= Physics2D.Raycast(this.transform.position, direction,0.00002f);
-       if (hit.collider!=null&& hit.collider.gameObject.tag=="Tejido")
+        RaycastHit2D hit= Physics2D.Raycast(this.transform.position, direction,0.02f);
+       if (hit.collider!=null&& hit.collider.gameObject.tag=="Herida")
        {
-           hit.collider.gameObject.GetComponent<TejidoMalo>().porcentaje += 0.02f;
+           hit.collider.gameObject.GetComponent<herida>().porcentaje -= 2f;
            Destroy(this.gameObject);
        }
+        if (hit.collider != null && hit.collider.gameObject.tag == "MapWall")
+        {
+            Destroy(this.gameObject);
+        }
 
     }
    

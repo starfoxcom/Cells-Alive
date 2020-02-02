@@ -10,6 +10,12 @@ public class ExitCredits : MonoBehaviour
     {
         Tiempo += Time.deltaTime;
         if (GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length <= Tiempo)
+        {
+            if (FindObjectOfType<PauseMenu>())
+            {
+                Destroy(FindObjectOfType<PauseMenu>().gameObject);
+            }
             SceneManager.LoadScene("Menu");
+        }
     }
 }

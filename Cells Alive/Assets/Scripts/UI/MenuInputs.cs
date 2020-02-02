@@ -11,12 +11,11 @@ public class MenuInputs : MENUin
     public Image exit;
     
     public MainMenu mainmenu;
-   
-    bool isMove=false;
-    float axis=0;
     void Start()
     {
-       
+        newGame.enabled = true;
+        credits.enabled = false;
+        exit.enabled = false;
     }
 
     // Update is called once per frame
@@ -52,6 +51,36 @@ public class MenuInputs : MENUin
             exit.enabled = true;
         }
         
+    }
+    public void onUpdate()
+    {
+        if (Index > 2)
+        {
+            Index = 0;
+        }
+        if (Index < 0)
+        {
+            Index = 2;
+        }
+
+        if (Index == 0)
+        {
+            newGame.enabled = true;
+            credits.enabled = false;
+            exit.enabled = false;
+        }
+        else if (Index == 1)
+        {
+            newGame.enabled = false;
+            credits.enabled = true;
+            exit.enabled = false;
+        }
+        else if (Index == 2)
+        {
+            newGame.enabled = false;
+            credits.enabled = false;
+            exit.enabled = true;
+        }
     }
     public override void selected()
     {

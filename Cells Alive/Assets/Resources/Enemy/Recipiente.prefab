@@ -161,6 +161,7 @@ MonoBehaviour:
   - {fileID: 1194192105406119285}
   - {fileID: 1194192105997597290}
   - {fileID: 1194192105294044665}
+  Ammunition: 0
 --- !u!114 &1194192105293973018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,6 +181,7 @@ MonoBehaviour:
   velocity: 0.5
   ActMovement: {x: 0, y: 0}
   RigBod: {fileID: 0}
+  my: {fileID: 0}
 --- !u!135 &120824951
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -205,6 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7012b57b5b238664eb343763171cda54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  live: 100
 --- !u!1 &1194192105294044646
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,6 +311,7 @@ MonoBehaviour:
   AtackPrefab: {fileID: 7494007134816743785, guid: 129cc2975dd3d9b45b8f20e0dbab743c,
     type: 3}
   globuloTransform: {fileID: 1194192105293973023}
+  Ammunation: {fileID: 0}
   actualDir: {x: 0, y: 0, z: 0}
   ratio: 29
   isUpRight: 0
@@ -510,6 +514,7 @@ MonoBehaviour:
   AtackPrefab: {fileID: 7494007134816743785, guid: 129cc2975dd3d9b45b8f20e0dbab743c,
     type: 3}
   globuloTransform: {fileID: 1194192105293973023}
+  Ammunation: {fileID: 0}
   actualDir: {x: 0, y: 0, z: 0}
   ratio: 29
   isUpRight: 0
@@ -1098,6 +1103,7 @@ MonoBehaviour:
   AtackPrefab: {fileID: 7494007134816743785, guid: 129cc2975dd3d9b45b8f20e0dbab743c,
     type: 3}
   globuloTransform: {fileID: 1194192105293973023}
+  Ammunation: {fileID: 0}
   actualDir: {x: 0, y: 0, z: 0}
   ratio: 29
   isUpRight: 0
@@ -1577,6 +1583,7 @@ MonoBehaviour:
   AtackPrefab: {fileID: 7494007134816743785, guid: 129cc2975dd3d9b45b8f20e0dbab743c,
     type: 3}
   globuloTransform: {fileID: 1194192105293973023}
+  Ammunation: {fileID: 0}
   actualDir: {x: 0, y: 0, z: 0}
   ratio: 29
   isUpRight: 1

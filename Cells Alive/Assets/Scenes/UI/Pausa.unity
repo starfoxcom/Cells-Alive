@@ -965,6 +965,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputs: {fileID: 0}
   menuimpu: {fileID: 1954180793}
+  isMainMenu: 0
+  isPauseMenu: 1
 --- !u!114 &1954180792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -979,6 +981,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputs: {fileID: 0}
   menuimpu: {fileID: 1954180793}
+  isMainMenu: 0
+  isPauseMenu: 1
 --- !u!114 &1954180793
 MonoBehaviour:
   m_ObjectHideFlags: 0

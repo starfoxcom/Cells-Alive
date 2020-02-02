@@ -11,6 +11,9 @@ TagManager:
   - GlobuloRojo
   - Wall
   - MapWall
+  - Virus
+  - BloodCell
+  - Herida
   layers:
   - Default
   - TransparentFX

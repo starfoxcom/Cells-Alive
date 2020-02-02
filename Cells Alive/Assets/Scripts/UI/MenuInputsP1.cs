@@ -10,6 +10,9 @@ public class MenuInputsP1 : MonoBehaviour
     int Index = 0;
     bool isMove = false;
     float axis = 0;
+    public bool isMainMenu=false;
+    public bool isPauseMenu=false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +22,21 @@ public class MenuInputsP1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!isMainMenu&&!isPauseMenu)
+        {
+            return;
+        }
+        if (isPauseMenu)
+        {
+           if( !FindObjectOfType<PauseMenu>().GameIsPaused)
+            {
+                return;
+            }
+        }
+        if (isMainMenu)
+        {
+            FindObjectOfType<MenuInputs>().onUpdate();
+        }
         inputs = FindObjectOfType<inputManagerP1>();
 
         Index = menuimpu.Index;
