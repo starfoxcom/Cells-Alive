@@ -179,7 +179,7 @@ public class MovimientoInterno : MovimientoInter
         RaycastHit2D Hit;
         if (isGrounded)
         {
-            Hit = Physics2D.Raycast(this.gameObject.transform.position, new Vector2(0, -1), 0.2f);
+            Hit = Physics2D.Raycast(this.gameObject.transform.position, new Vector2(0, -1), 2.2f);
             if (Hit.collider == null)
                 fall = true;
             else if (Hit.collider.gameObject.tag == "Floor")
@@ -205,7 +205,7 @@ public class MovimientoInterno : MovimientoInter
             fall = false;
         }
         // Debug.Log(vyNegative);
-        Hit = Physics2D.Raycast(this.gameObject.transform.position, new Vector2(0, 1), vy - 0.2f);
+        Hit = Physics2D.Raycast(this.gameObject.transform.position, new Vector2(0, 1), vy - 2.2f);
         if (Hit.collider != null && Hit.collider.tag == "Floor" && fall)
         {
             if (this.separate)
