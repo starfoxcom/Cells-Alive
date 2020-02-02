@@ -5,9 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    public static bool GameIsPaused = false;
+    public bool GameIsPaused = false;
     public GameObject MenuPause;
 
+    void Start()
+    {
+        GameIsPaused = false;
+    }
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape))
@@ -41,7 +45,9 @@ public class PauseMenu : MonoBehaviour
 
     public void ReturnMenu()
     {
-        SceneManager.LoadScene("Menu");
+        GameIsPaused = false;
+        Time.timeScale = 1f;
         Destroy(gameObject);
+        SceneManager.LoadScene("Menu");
     }
 }
